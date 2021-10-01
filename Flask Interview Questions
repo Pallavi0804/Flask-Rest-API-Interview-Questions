@@ -1,1 +1,29 @@
 
+1. What is Flask ?
+Flask is a micro web framework written in Python. Flask is an API of Python that allows us to build up web-applications. This means flask provides you with tools, libraries and technologies that allow you to build a web application.
+Flask is based on WSGI (Web Server Gateway Interface) and Jinja2 Template.
+
+2. What is WSGI ?
+WSGI is standard protocol which is used to communicate between webserver (e.g. Apache, IIS) and web application (can develop using flask application)
+
+3. How to add the mailing feature in the Flask Application?
+To send emails, we need to install the Flask-Mail flask extension using the below-given command.
+pip install Flask-Mail
+
+4. What is the default host port and port of Flask?
+Flask default host is a localhost (127.0.0.1), and the default port is 5000.
+
+5. How to change default host and port in Flask?
+Flask default host and port can be changed by passing the values to host and port parameters while calling run method on the app.
+
+from flask import Flask
+app = Flask(__name__)
+ @app.route("/")
+def index():
+    return "Hello, World!"
+ if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
+    
+6. Why is Flask called a Microframework?
+Flask is called a microframework because Flask only provides core features such as request, routing, and blueprints.
+For other features, such as Caching, ORM, forms, etc., we need to make use of Flask-Extensions.

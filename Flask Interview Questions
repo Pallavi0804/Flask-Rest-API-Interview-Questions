@@ -27,3 +27,39 @@ def index():
 6. Why is Flask called a Microframework?
 Flask is called a microframework because Flask only provides core features such as request, routing, and blueprints.
 For other features, such as Caching, ORM, forms, etc., we need to make use of Flask-Extensions.
+
+7. How to use a session in Flask?
+Whenever we want to save some data between requests, then we make use of session objects in Flask. We can set and get data from the session object, as shown below.
+
+fromflask import Flask, session
+app = Flask(__name__) 
+@app.route('/use_session')
+def use_session()
+    if 'song' not in session:
+        session['songs'] = {'title': 'Tapestry', 'singer': 'Bruno Major'}
+ 
+    return session.get('songs')
+ 
+@app.route('/delete_session')
+def delete_session()
+    session.pop('song', None)
+    return "removed song from session"
+    
+
+8. How to create a RESTful application in Flask?
+A RESTful application can be created in Flask with the help of many extensions.
+Some proven Flask extensions are listed below.
+
+Flask-API
+Flask-RESTful
+Flask-RESTX
+Connexion
+
+9. How to debug a Flask Application?
+Flask comes with a development server, and the development server has a Debug Mode. The Debug mode can be set to true when we call the run method of the Flask Application object.
+Given below is an example.
+
+from flask import Flask 
+app = Flask(__name__)
+app.run(host='127.0.0.1', debug=True)
+
